@@ -38,9 +38,9 @@ chairs %>%
 
 colreg <- read.csv("https://raw.githubusercontent.com/agricolamz/2018_data_analysis_for_linguists/master/data/students/katyaprotsenyuk/hw5_CA_MCA/hw5_colreg.csv")
 
-rownames(colreg) <- c('black', 'blue', 'brown', 'gray', 'green', 'orange', 'pink', 'purple', 'red', 'white', 'yellow')
-
-ca <- ca(colreg)
+rownames(colreg) <- colreg$colors
+ca <- ca(colreg[,-5])
+ca
 
 colreg_col <- data.frame(ca$colcoord)
 colreg_col$rows <- rownames(ca$colcoord)
